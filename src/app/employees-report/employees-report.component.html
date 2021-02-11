@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <table class="table table-border">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

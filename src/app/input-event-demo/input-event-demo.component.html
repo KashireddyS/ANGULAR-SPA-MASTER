@@ -1,0 +1,5 @@
+<div class="container-fluid">
+<input type="text" class="form-control" value="{{ serverName }}" (input)="onUpdateServerName($event)">
+<button class="btn btn-primary" (click)="Button_click($event)" [disabled]="!buttonEnableStatus">Click Me</button>
+<label>{{ serverName }}</label>
+</div>

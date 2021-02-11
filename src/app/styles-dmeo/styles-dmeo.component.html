@@ -1,0 +1,16 @@
+<!-- Simple CSS style -->
+<h1 style="background-color: lightgray;">Tollplus India Pvt. Ltd.</h1>
+<!-- Simple static angular style -->
+<h1 [ngStyle]="{'background-color': 'cyan'}">Tollplus India Pvt. Ltd.</h1>
+<!-- CSS style using Angular to make it dynamic -->
+<h1 [ngStyle]="{'background-color': dynamicColor }">Tollplus India Pvt. Ltd.</h1>
+
+<h2 [ngStyle]="{'background-color': getColor() }" [ngClass]="{'online':isServerOnline }">
+    The server with id: {{ serverId }} status is: {{ serverStatus }}
+</h2>
+
+<!-- Simple CSS class example: -->
+<h1 class="online">Tollplus India Pvt.Ltd</h1>
+
+<!-- Simple CSS class using Angular -->
+<h1 [ngClass]="{'online':showOneline}">Tollplus India Pvt.Ltd</h1>

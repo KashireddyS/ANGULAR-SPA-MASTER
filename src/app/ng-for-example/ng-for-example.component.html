@@ -1,0 +1,15 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Color</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let color of favoriteColors; let i = index;
+        let even = even; let odd = odd" [ngClass]="{odd: odd, even: even}">
+            <td>{{ i+1 }}</td>
+            <td>{{ color }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,162 @@
+Agenda: How to create a component in Angular?
+
+path>ng generate component <component-name>
+ng g c <component-name>
+
+ng generate component bootstrap-practice
+
+Agenda: Data-Binding in Angular
+Two-way data binding:
+
+Agenda: WAP to enable button only after 3 seconds after loading / reloading the page.
+
+01. Create one variable in component class to enable or disable the button.
+02. Use JavaScript function to alter the above variable.
+
+Agenda: Discuss about click event in Angular. Show some message when clicked on the button.
+
+Agneda: Enter some message in the textbox. Show that message upon clicking on the button. If the textbox is blank, the button should be disabled.
+
+(input)
+
+
+TASK: The program sould meet the below requirements.
+* "Add Server" button should be enabled two seconds after the page has loaded / reloaded.
+* When clicked on "Add Server" button, the message should be shown as: "Server was created! Name is: <name_used>
+* "Add Server" button should not be enabled if the server name is blank.
+
+03 FEB:
+-------
+Agenda: Write a function to get server status. The output should be something like below.
+The server with ID: 10 is offline
+Show the output in light-red color() background (code: #ff6961) if the server status is offline.
+Show the output in light-green color() background (code: #90EE90) if the server status is online.
+
+
+Agenda: As of now, the server component was developed in such a way that if the server is offline, then the background color is light-red; and if the server is online, then the background color is light-green.
+Add style class to print the message in white color (in addition to light-green color background) if the server is online.
+
+
+
+<h1 ngClass="{'online':'condition'}">Tollplus India Pvt.Ltd</h1>
+
+
+Class binding in Angular:
+<h2 class="text-success" [class=="successClass">Tollplus</h2>
+
+Agenda: There should be one input element, and one button. When the user clicks on the button, log a message to the console whatever is the text entered in this input element.
+
+
+
+<table>
+  <tr>
+    <td>Some data</td>
+  </tr>
+</table>
+
+
+
+Agenda: Declare showCompanyName bool variable inside component class.
+Show the company name with h1 heading if showCompanyName variable is set to true. 
+Show ‘Name is hidden’ message if showCompanyName variable is set to false.
+
+04-FEB-2021:
+------------
+01. Agenda: WAP to print the weekday name for the week day number entered in component.ts file
+
+02. ngFor: Agenda: Print your favorite colors.
+
+Agenda: WAP to to show Employees report.
+ employees-report: EmployeesReportComponent
+Service:
+
+ng g service _services/serviceName
+
+05-FEB-2021:
+------------
+Fetch Data using HTTP
+Agenda:
+* Fetch data from employees.json file and show all the employees in table format.
+01. Create /assets/data/employees.json file
+02. Create IEmployee interface inside _contracts folder.
+03. Create getEmployeesFromJson() method inside EmployeeService to retrieve data from json file.
+04. Create "getEmployeesFromJson" component with the required code to display the data
+
+ng generate interface IEmployee
+---------------------------------------------
+
+Routing and Navigation in Angular:
+Agenda: When user navigates to URL: http://localhost:4200  two buttons should be shown with captions Departments, and Employees. When user clicks on button with caption Departments, the department details should be shown. Same case for employees.
+01. Generate "department-list", and "employee-list" components
+02. Configure the routes in app-routing.module.ts, and app.module.ts. Follow below style to avoid duplication.
+    02.1. Declare "routingComponents" array const in app-routing.module.ts with all the ComponentNames
+    02.2. Import "routingComponents" constant into app.module.ts declarations section.
+03. To specify where these components have to be displayed, "router-outlet" directive in app.component.html file is helpful.
+	==> F5 -> Below two URLs should work.
+	http://localhost:4200/departments
+	http://localhost:4200/employees
+04. As page-not-found code implementation is also done, if I try to navigate to http://localhost:4200/invalidurl, "Page Not Found" message should be shown.
+05. As default route configuration is also done, the page should navigate to "departments" when I typed http://localhost:4200
+
+------------------------------------------------
+
+Route Parameters in Angular:
+Agenda:  "Department-list" component should contain the list of departments. When you click on the department, you have to navigate to Department-detail component with the message: You selected department with id = <id>
+01. Write code in department-list component to display all the department details
+02. Create "department-detail" component. As soon as we've created the component, and if that needs to be participated in navigation, we need to add route in app-routing.module.ts file.
+    => Click on some department and see if the page is navigating properly. The selected department id should be available in the URL.
+03. Now, we need to read the URL parameter to display it in the view. For this, we use "ActivatedRoute" service in department-detail.component.ts file.
+
+------------------------------------------------
+05/02: 28 forms-example1
+Working with Forms in Angular.
+Agenda: Create Course Enrollment Form using different controls like textbox, drop-down-list, radio buttons, checkboxes, and button.
+
+D:\downloaded\path>npm install
+------------------------------------------------
+08/02:
+
+Agenda: Bind Data to a Model in Angular. Use "ngModel" properties to provide visual feedback to the user as they’re filling the form. Validate form fields and apply an appropriate class to visually indicate to the user when the form is invalid. Show appropriate validation error message if one exists. Disable the submit button as long as form data is invalid, and enable when the form data becomes valid.
+01. app.module.ts → import FormsModule from @angular/forms into imports array.
+02. Create an instance of User model in forms-example1.component.ts file, and use it to bind to the form.
+03. One example: [(ngModel)]=”userModel.name” ← we’re binding name property of userModel model to ngModel of name input element and vice versa.
+04. Angular Forms Validation, Important ngModel properties to consider:
+untouched, touched
+pristine, dirty
+valid, invalid
+=> F5 -> As the values have been substituted in .ts file, you should be able to see 2nd json pipe.
+
+
+untouched	* touched
+prestine	dirty
+valid		* invalid
+
+Name - Required
+Email - Required, pattern - RegEx
+Phone - pattern - RegEx
+Dropdown - some value should be selected. Must not be default.
+Options button
+Checkbox
+
+email.errors
+
+10/02:
+------
+Submitting form data in Angular:
+Agenda: Create an Angular service and send data to the server. Handle errors after the form is submitted.
+use the below command to create a service.
+D:\path>ng generate service enrollment
+
+IMPORTANT NOTE: In enrollment.service.ts file, catchError cannot be imported by default. Hence, we need to write import statement explicity.
+
+
+
+
+
+
+
+
+
+
+
+
